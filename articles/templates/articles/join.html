@@ -1,0 +1,52 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Smart Articles Premium</h1>
+        <p class="lead">
+            Get the upper-hand with premium content.
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-md-2 g-4 my-3">
+            <div class="col">
+
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        Monthly
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">$9 <small class="text-muted">/ mo</small></h1>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional
+                            content. This content is a little bit longer.</p>
+                        <a href="">
+                            <button type="button" class="btn btn-lg btn-block btn-outline-warning">Get started</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        Yearly
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">$88 <small class="text-muted">/ yr</small></h1>
+
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <a href="">
+                            <button type="button" class="btn btn-lg btn-block btn-warning">Get started</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
