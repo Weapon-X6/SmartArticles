@@ -1,6 +1,15 @@
 {% extends 'articles/base.html' %}
 {% block content %}
 
-    home
+    <div class="container">
+        <h3>Articles</h3>
+        <ul>
+            {% for article in articles.all %}
+                <li>
+                    <a href="{% url 'article' article.id %}">{{ article.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}
