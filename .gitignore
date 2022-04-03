@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.py[co]
+db.sqlite3
+media
+
+# Sphinx documentation
+docs/_build/
+docs/locale/
+
+# Unit test / coverage reports
+.tox/
+tests/coverage_html/
+tests/.coverage
+tests/report/
+
+# Translations
+*.pot
+
+# Distribution / packaging
+dist/
+build/
+venv/
+env/
+*.egg-info
+
+# PyCharm #
+.idea/
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Visual Studio Code #
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
