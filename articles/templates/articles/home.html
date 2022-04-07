@@ -10,9 +10,17 @@
                     <div class="card my-1">
                         <div class="card-body">
                             <h5 class="card-title">
-                                 <a href="{% url 'article' article.id %}">
-                                {{ article.title }}</a></h5>
+                                <a href="{% url 'article' article.id %}">
+                                    {{ article.title }}</a></h5>
                             <p class="card-text text-truncate">{{ article.text }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            {% if article.is_premium %}
+                                <span class="badge bg-warning text-dark">Premium</span>
+                            {% else %}
+                                &nbsp;
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
