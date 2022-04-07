@@ -3,13 +3,21 @@
 
     <div class="container">
         <h3>Articles</h3>
-        <ul>
+
+        <div class="row">
             {% for article in articles.all %}
-                <li>
-                    <a href="{% url 'article' article.id %}">{{ article.title }}</a>
-                </li>
+                <div class="col-sm-4">
+                    <div class="card my-1">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                 <a href="{% url 'article' article.id %}">
+                                {{ article.title }}</a></h5>
+                            <p class="card-text text-truncate">{{ article.text }}</p>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 
 {% endblock %}
