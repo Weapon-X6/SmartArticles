@@ -8,4 +8,5 @@ urlpatterns = [
     path('join', views.join, name='join'),
     path('auth/signup', views.SignUp.as_view(), name='signup'),
     path('auth/', include('django.contrib.auth.urls')),
+    path('checkout', views.checkout, name='checkout'),
 ]

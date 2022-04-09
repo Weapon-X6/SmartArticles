@@ -24,6 +24,10 @@ def join(request):
     return render(request, 'articles/join.html')
 
 
+def checkout(request):
+    return render(request, 'articles/checkout.html')
+
+
 class SignUp(generic.CreateView):
     form_class = ArticlesSignUpForm
     success_url = reverse_lazy('home')

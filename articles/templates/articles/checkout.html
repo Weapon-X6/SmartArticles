@@ -1,0 +1,12 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <span class="text-muted">Your cart</span>
+
+        <form action="{% url 'checkout' %}" method="get">
+
+        </form>
+
+    </div>
+{% endblock %}

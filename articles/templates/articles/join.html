@@ -20,7 +20,6 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title">$9 <small class="text-muted">/ month</small></h1>
-                        <p class="card-text">
                         <ul>
                             <li>
                                 New articles every week
@@ -29,8 +28,7 @@
                                 Access to premium content
                             </li>
                         </ul>
-                        </p>
-                        <a href="">
+                        <a href="{% url 'checkout' %}?plan=monthly">
                             <button type="button" class="btn btn-lg btn-block btn-outline-warning">Get started</button>
                         </a>
                     </div>
@@ -44,7 +42,6 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title">$88 <small class="text-muted">/ year</small></h1>
-                        <p class="card-text">
                         <ul>
                             <li>
                                 New articles every week
@@ -56,8 +53,7 @@
                                 Early Access content
                             </li>
                         </ul>
-                        </p>
-                        <a href="">
+                        <a href="{% url 'checkout' %}?plan=yearly">
                             <button type="button" class="btn btn-lg btn-block btn-warning">Get started</button>
                         </a>
                         <span class="badge bg-primary rounded-pill">Save 20%</span>
