@@ -2,11 +2,30 @@
 
 {% block content %}
     <div class="container">
-        <span class="text-muted">Your cart</span>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-light">
+                <h4 class="d-flex justify-content-between">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">1</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Premium Subscription</div>
+                            Monthly
+                        </div>
+                        <span class="badge bg-success">$14</span>
+                    </li>
+                </ul>
 
-        <form action="{% url 'checkout' %}" method="get">
+                <form action="{% url 'checkout' %}" method="get">
 
-        </form>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
 
     </div>
 {% endblock %}
