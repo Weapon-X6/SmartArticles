@@ -11,16 +11,35 @@
                 </h4>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
+                        <div class="me-auto">
                             <div class="fw-bold">Premium Subscription</div>
                             Monthly
                         </div>
-                        <span class="badge bg-success">$14</span>
+                        <span class="badge bg-warning">$14</span>
+                    </li>
+                    {% if coupon != 'none' %}
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div class="text-success">
+                                <h6 class="my-0">Promo code</h6>
+                                <small>Karfreitag</small>
+                            </div>
+                            <span class="text-success">-$5</span>
+                        </li>
+                    {% endif %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                         <span class="badge bg-success">$9</span>
                     </li>
                 </ul>
 
-                <form action="{% url 'checkout' %}" method="get">
-
+                <form class="card p-2" action="{% url 'checkout' %}" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Promo code" name="coupon">
+                        <input type="hidden" value="" name="plan"/>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">Redeem</button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="col-4"></div>
