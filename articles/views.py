@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
@@ -24,6 +25,7 @@ def join(request):
     return render(request, 'articles/join.html')
 
 
+@login_required
 def checkout(request):
     return render(request, 'articles/checkout.html')
 

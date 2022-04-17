@@ -28,7 +28,7 @@
                     {% endif %}
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                         <span class="badge bg-success">$9</span>
+                        <span class="badge bg-success">$9</span>
                     </li>
                 </ul>
 
@@ -41,10 +41,26 @@
                         </div>
                     </div>
                 </form>
+
+                <div class="text-center pt-3">
+                    <section>
+                        <form action="{% url 'checkout' %}" method="post">
+                            {% csrf_token %}
+                            <script></script>
+                            <!-- Add a hidden field with the lookup_key of your Price -->
+                            <input type="hidden" name="lookup_key" value="price_1Kp3MhF7F9yNammSd0N4obkJ"/>
+                            <button id="checkout-and-portal-button" type="submit" class="btn btn-warning">Checkout</button>
+                        </form>
+                    </section>
+                </div>
+
             </div>
             <div class="col-4"></div>
         </div>
 
 
     </div>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 {% endblock %}
