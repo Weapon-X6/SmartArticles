@@ -1,11 +1,16 @@
+import stripe
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
+import stripe
 
 from .forms import ArticlesSignUpForm
 from .models import Article
+
+
+stripe.api_key = 'sk_test_'
 
 
 def home(request):
@@ -27,7 +32,10 @@ def join(request):
 
 @login_required
 def checkout(request):
-    return render(request, 'articles/checkout.html')
+    if request.method == 'POST':
+        return redirect('home')
+    else:
+        return render(request, 'articles/checkout.html')
 
 
 class SignUp(generic.CreateView):
@@ -41,7 +49,3 @@ class SignUp(generic.CreateView):
         new_user = authenticate(username=username, password=password)
         login(self.request, new_user)
         return valid
-
-
-
-
