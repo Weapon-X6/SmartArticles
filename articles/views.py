@@ -35,7 +35,18 @@ def checkout(request):
     if request.method == 'POST':
         return redirect('home')
     else:
-        return render(request, 'articles/checkout.html')
+        coupon = 'none'
+        price = 1000
+        og_dollar = 10
+        coupon_dollar = 0
+        final_dollar = 10
+        if request.method == 'GET' and 'plan' in request.GET:
+            if request.GET['plan'] == 'yearly':
+                plan = 'yearly'
+                price = 10000
+                og_dollar = 100
+                final_dollar = 100
+        return render(request, 'articles/checkout.html', )
 
 
 class SignUp(generic.CreateView):
