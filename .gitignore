@@ -23,6 +23,7 @@ build/
 venv/
 env/
 *.egg-info
+.env
 
 # PyCharm #
 .idea/
