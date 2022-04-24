@@ -9,4 +9,5 @@ urlpatterns = [
     path('auth/signup', views.SignUp.as_view(), name='signup'),
     path('auth/', include('django.contrib.auth.urls')),
     path('checkout', views.checkout, name='checkout'),
+    path('config/', views.stripe_config),
 ]

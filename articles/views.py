@@ -1,10 +1,13 @@
 import stripe
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 import stripe
+from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 from .forms import ArticlesSignUpForm
 from .models import Article
@@ -49,6 +52,14 @@ def checkout(request):
         return render(request, 'articles/checkout.html', )
 
 
+@csrf_exempt
+def stripe_config(request):
+    if request.method == 'GET':
+        stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
+        return JsonResponse(stripe_config, safe=False)
+
+
+
 class SignUp(generic.CreateView):
     form_class = ArticlesSignUpForm
     success_url = reverse_lazy('home')
@@ -60,3 +71,5 @@ class SignUp(generic.CreateView):
         new_user = authenticate(username=username, password=password)
         login(self.request, new_user)
         return valid
+
+
